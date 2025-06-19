@@ -133,6 +133,21 @@ Contributions are welcome! Please feel free to submit a pull request. For more d
 
 This project is inspired by [Flightmare](https://github.com/uzh-rpg/flightmare_unity).
 
+## Cite
+If you use this package in your research or projects, please cite it as follows:
+
+```
+@misc{YOPO-Rally,
+      title={YOPO-Rally: A Sim-to-Real Single-Stage Planner for Off-Road Terrain}, 
+      author={Hongyu Cao and Junjie Lu and Xuewei Zhang and Yulin Hui and Zhiyu Li and Bailing Tian},
+      year={2025},
+      eprint={2505.18714},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2505.18714}, 
+}
+```
+
 ## License
 
 This project is licensed under the [Apache-2.0 License](LICENSE).

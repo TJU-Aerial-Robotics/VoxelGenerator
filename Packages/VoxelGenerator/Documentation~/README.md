@@ -6,12 +6,6 @@
 
 ---
 
-|            Forest            |        RMUC Field        |
-| :--------------------------: | :----------------------: |
-| ![Forest](.Image/Forest.gif) | ![RMUC](.Image/RMUC.gif) |
-|         1.0 M Points         |       2.3M Points        |
-|         0.45 seconds         |       0.62 seconds       |
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -110,18 +104,16 @@ Both methods are optimized for performance using Unity's Job System and Burst Co
 
 ### `VoxelGeneratorOverlap` Performance
 
-|    Snapshot    | ![](.Image/Overlap/low.png) | ![](.Image/Overlap/medium.png) | ![](.Image/Overlap/high.png) | ![](.Image/Overlap/extreme.png) |
-| :------------: | :-------------------------: | :----------------------------: | :--------------------------: | :-----------------------------: |
-|  Total Points  |           0.66 M            |             2.19 M             |            5.15 M            |             10.02 M             |
-|   Flightmare   |            7.01s            |             20.47s             |            45.23s            |             85.31s              |
-| VoxelGenerator |            0.35s            |             0.45s              |            0.82s             |              0.99s              |
+|  Total Points  | 0.66 M | 2.19 M | 5.15 M | 10.02 M |
+| :------------: | :----: | :----: | :----: | :-----: |
+|   Flightmare   | 7.01s  | 20.47s | 45.23s | 85.31s  |
+| VoxelGenerator | 0.35s  | 0.45s  | 0.82s  |  0.99s  |
 
 ### `VoxelGeneratorRaycast` Performance
 
-|    Snapshot    | ![](.Image/Raycast/low.png) | ![](.Image/Raycast/medium.png) | ![](.Image/Raycast/high.png) | ![](.Image/Raycast/extreme.png) |
-| :------------: | :-------------------------: | :----------------------------: | :--------------------------: | :-----------------------------: |
-|  Total Points  |           0.25 M            |             0.56 M             |            1.00 M            |              2.25M              |
-| VoxelGenerator |            54ms             |              35ms              |             52ms             |              129ms              |
+|  Total Points  | 0.25 M | 0.56 M | 1.00 M | 2.25M |
+| :------------: | :----: | :----: | :----: | :---: |
+| VoxelGenerator |  54ms  |  35ms  |  52ms  | 129ms |
 
 ## Contributing
 
@@ -130,6 +122,21 @@ Contributions are welcome! Please feel free to submit a pull request. For more d
 ## Thanks
 
 This project is inspired by [Flightmare](https://github.com/uzh-rpg/flightmare_unity).
+
+## Cite
+If you use this package in your research or projects, please cite it as follows:
+
+```
+@misc{YOPO-Rally,
+      title={YOPO-Rally: A Sim-to-Real Single-Stage Planner for Off-Road Terrain}, 
+      author={Hongyu Cao and Junjie Lu and Xuewei Zhang and Yulin Hui and Zhiyu Li and Bailing Tian},
+      year={2025},
+      eprint={2505.18714},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2505.18714}, 
+}
+```
 
 ## License
 
