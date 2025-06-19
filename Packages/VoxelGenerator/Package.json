@@ -1,9 +1,9 @@
 {
     "name": "com.tju-aerial-robotics.voxel-generator",
-    "version": "1.0.0",
     "displayName": "VoxelGenerator",
-    "description": "A Unity package for real-time point cloud generation based on colliders.",
+    "version": "1.0.0",
     "unity": "2022.3",
+    "description": "A Unity package for real-time point cloud generation based on colliders.",
     "dependencies": {
         "com.unity.burst": "1.8.22",
         "com.unity.mathematics": "1.2.6",
@@ -21,5 +21,10 @@
             "description": "A sample scene demonstrating the VoxelGenerator functionality.",
             "path": "Samples~/SampleScene"
         }
-    ]
+    ],
+    "author": {
+        "name": "Bob-Eric",
+        "email": "1274653465@qq.com",
+        "url": "https://github.com/Bob-Eric"
+    }
 }
