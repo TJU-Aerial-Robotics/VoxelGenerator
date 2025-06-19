@@ -83,7 +83,7 @@ https://github.com/TJU-Aerial-Robotics/VoxelGenerator.git?path=/Packages/VoxelGe
 
 1.  Add either the `VoxelGeneratorOverlap` or `VoxelGeneratorRaycast` prefab to your scene.
 2.  Adjust the parameters in the Inspector to define the generation area and precision.
-3.  Call the `StartGeneration()` and `ClearPointCloud()` public methods to control the generation process from your scripts. Alternatively, use the built-in shortcuts: press `P` to start generation and `R` to clear the point cloud.
+3.  Use the `StartGeneration()` and `ClearPointCloud()` public methods to control the generation process from your scripts. Call the `GetVoxelPointCloudData()` public method to retrieve data. Alternatively, use the built-in shortcuts: press `P` to start generation and `R` to clear the point cloud.
 
 **Key Parameters (`VoxelGeneratorBase`):**
 

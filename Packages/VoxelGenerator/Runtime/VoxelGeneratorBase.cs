@@ -7,6 +7,7 @@ namespace VoxelGenerator {
     public abstract class VoxelGeneratorBase : MonoBehaviour {
         [SerializeField, Min(0.01f)] protected float _voxelSize = 0.1f;
         [SerializeField] protected LayerMask _layerMask = 1;
+        [SerializeField] protected bool _listenKeyInput = true;
         [SerializeField] protected bool _drawDebug = false;
         [SerializeField] protected bool _verbose = false;
         [SerializeField] protected bool _saveFile = false;
@@ -29,6 +30,8 @@ namespace VoxelGenerator {
         protected abstract void DisposeAfterCalculate();
         protected abstract IEnumerator InitVoxelCmds();
 
+        public ref NativeList<float3> GetVoxelPointCloudData() { return ref _voxelPointCloudData; }
+
         void OnValidate() {
             UpdateInfo();
         }
@@ -39,6 +42,9 @@ namespace VoxelGenerator {
         }
 
         void Update() {
+            if (!_listenKeyInput)
+                return;
+
             if (Input.GetKeyDown(KeyCode.P))
                 StartGeneration();
             else if (Input.GetKeyDown(KeyCode.R))

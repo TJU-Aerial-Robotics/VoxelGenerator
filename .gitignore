@@ -87,3 +87,5 @@ crashlytics-build.properties
 
 .vscode
 PointCloud
+Assets/Samples
+Assets/Samples.meta
