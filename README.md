@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3%2B-blue.svg)](https://unity.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TJU-Aerial-Robotics/VoxelGenerator)
 
 ---
 
