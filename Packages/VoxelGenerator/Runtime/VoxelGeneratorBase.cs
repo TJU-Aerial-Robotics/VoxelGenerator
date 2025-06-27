@@ -35,7 +35,7 @@ namespace VoxelGenerator {
         protected float _voxelSizeLocked;
         protected Bounds _bounds;
         protected bool _isRunning = false;
-        private const int MAX_DRAW_VOXELS = 100_000;
+        private const int MAX_DRAW_VOXELS = (int)1e5;
         protected const int MAX_VOXEL_COUNT = (int)1e9;
         protected const int INIT_JOB_BATCH_COUNT = 64;
         protected const int PHYSICS_BATCH_COUNT = 16;
@@ -67,21 +67,22 @@ namespace VoxelGenerator {
                 ClearPointCloud();
         }
         public void StartGeneration() {
-            if (!_isRunning) {
-                StartCoroutine(GeneratePointCloud());
-            }
-            else {
-                Debug.LogWarning("Point cloud generation is already running.");
-            }
+            StartCoroutine(GeneratePointCloud());
         }
 
         public IEnumerator GeneratePointCloud() {
+            if (_isRunning) {
+                Debug.LogWarning("Point cloud generation is already running. Stopping the current generation...");
+                yield break;
+            }
             _isRunning = true;
 
             DisposeAllLists();
 
-            if (!CheckVoxelCountLimit())
+            if (!CheckVoxelCountLimit()) {
+                _isRunning = false;
                 yield break;
+            }
 
             var startTime = Time.realtimeSinceStartup;
 
@@ -164,6 +165,29 @@ namespace VoxelGenerator {
                     Gizmos.DrawWireCube(point, (float3)_voxelSizeLocked);
                 }
             }
+        }
+        public void SetVoxelSize(float voxelSize) {
+            if (voxelSize <= 0) {
+                Debug.LogError("Voxel size must be greater than zero.");
+                return;
+            }
+            _voxelSize = voxelSize;
+            UpdateInfo();
+        }
+
+        public void SetLayerMask(LayerMask layerMask) {
+            _layerMask = layerMask;
+        }
+
+        public void SetListenKeyInput(bool listenKeyInput) {
+            _listenKeyInput = listenKeyInput;
+        }
+
+        public void SetFileProperties(bool saveFile, PointCloudFileType fileType = PointCloudFileType.PLYBin, string folderName = "PointCloud", string fileName = "pointcloud") {
+            _saveFile = saveFile;
+            _pointCloudFileType = fileType;
+            _pointCloudFolderName = folderName;
+            _pointCloudFileName = fileName;
         }
 
         public void ClearPointCloud() {
