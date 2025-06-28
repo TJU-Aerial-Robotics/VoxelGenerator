@@ -23,7 +23,7 @@ using UnityEngine;
 namespace VoxelGenerator.Jobs {
     [BurstCompile]
     struct HandleRaycastHitJob : IJobFor {
-        public CoordinateType coordinateType;
+        public Utils.CoordinateType coordinateType;
         [ReadOnly] public NativeArray<RaycastHit> hitResults;
         [ReadOnly] public NativeArray<RaycastCommand> raycastCommands;
         [WriteOnly] public NativeList<float3> voxelPointCloudData;
@@ -35,10 +35,10 @@ namespace VoxelGenerator.Jobs {
             float3 voxelPos = currentCmd.from + currentCmd.direction * hitResults[i].distance;
 
             switch (coordinateType) {
-                case CoordinateType.Unity:
+                case Utils.CoordinateType.Unity:
                     voxelPointCloudData.Add(voxelPos);
                     break;
-                case CoordinateType.FLU:
+                case Utils.CoordinateType.FLU:
                     voxelPointCloudData.Add(new float3(voxelPos.z, -voxelPos.x, voxelPos.y));
                     break;
             }

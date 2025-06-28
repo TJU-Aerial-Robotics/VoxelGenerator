@@ -28,7 +28,7 @@ namespace VoxelGenerator.Jobs {
         public float childVoxelFull;
         public float childVoxelHalf;
         public Bounds bounds;
-        public CoordinateType coordinateType;
+        public Utils.CoordinateType coordinateType;
         [ReadOnly] public NativeArray<float3> offsets;
         [ReadOnly] public NativeArray<ColliderHit> hitResults;
         [ReadOnly] public NativeArray<OverlapSphereCommand> currentCmds;
@@ -41,10 +41,10 @@ namespace VoxelGenerator.Jobs {
             var currentCmd = currentCmds[i];
             if (isProcessingLastDepth) {
                 switch (coordinateType) {
-                    case CoordinateType.Unity:
+                    case Utils.CoordinateType.Unity:
                         voxelPointCloudData.Add(currentCmd.point);
                         break;
-                    case CoordinateType.FLU:
+                    case Utils.CoordinateType.FLU:
                         voxelPointCloudData.Add(new float3(currentCmd.point.z, -currentCmd.point.x, currentCmd.point.y));
                         break;
                 }

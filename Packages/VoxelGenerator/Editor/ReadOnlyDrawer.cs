@@ -15,8 +15,8 @@
  */
 
 using UnityEditor;
-
 using UnityEngine;
+using VoxelGenerator.Utils;
 
 namespace VoxelGenerator.Editor {
     [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]

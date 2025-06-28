@@ -18,6 +18,7 @@ using System.Collections;
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using VoxelGenerator.Utils;
 
 namespace VoxelGenerator {
     public abstract class VoxelGeneratorBase : MonoBehaviour {

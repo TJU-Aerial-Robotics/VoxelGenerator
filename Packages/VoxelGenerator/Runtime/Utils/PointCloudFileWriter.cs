@@ -19,7 +19,7 @@ using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace VoxelGenerator {
+namespace VoxelGenerator.Utils {
     class PointCloudFileWriter {
         public static string Write(string folderName, string fileName,
             PointCloudFileType pointCloudFileType, NativeArray<float3> voxelPointCloudData) {

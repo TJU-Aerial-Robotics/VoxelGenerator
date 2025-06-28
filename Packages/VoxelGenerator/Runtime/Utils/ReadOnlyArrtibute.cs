@@ -15,5 +15,7 @@
  */
 
 using UnityEngine;
-public class ReadOnlyAttribute : PropertyAttribute {
+namespace VoxelGenerator.Utils {
+    public class ReadOnlyAttribute : PropertyAttribute {
+    }
 }
